@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Canvas Check — Assignment Reader & Checker",
+  "version": "0.8.4",
+  "description": "Read Canvas assignments, check drafts before submission, and preview rubric-based grades with teacher feedback.",
+  "default_locale": "en",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "sidePanel",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://thevillageschool.instructure.com/*",
+    "https://cdn.inst-fs-iad-prod.inscloudgate.net/*",
+    "https://inst-fs-iad-prod.inscloudgate.net/*",
+    "http://127.0.0.1:4318/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Open Canvas Check",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://thevillageschool.instructure.com/courses/*",
+        "http://127.0.0.1/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  },
+  "short_name": "Canvas Check"
+}

@@ -1,0 +1,11 @@
+{
+  "extensionName": {
+    "message": "Canvas Check — Assignment Reader & Checker"
+  },
+  "extensionDescription": {
+    "message": "Read Canvas assignments, check drafts before submission, and preview rubric-based grades with teacher feedback."
+  },
+  "actionTitle": {
+    "message": "Open Canvas Check"
+  }
+}

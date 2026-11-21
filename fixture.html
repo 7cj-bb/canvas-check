@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Canvas Check · 模拟作业页</title></head>
+  <body data-canvas-check-fixture>
+    <div class="fixture-banner">本地测试页面 · 不连接学校，也不会上传文件</div>
+    <main class="fixture-main">
+      <a href="/demo.html">← 返回交互预览</a>
+      <div class="fixture-meta">COURSE / ASSIGNMENTS / LOCAL FIXTURE</div>
+      <h1>数字统计练习</h1>
+      <label>Attempt <select role="combobox"><option>Attempt 1</option><option>Attempt 2</option></select></label>
+      <section data-testid="assignments-2-assignment-description"></section>
+      <section id="file-upload-container" data-canvas-check-dropzone>
+        <label class="fixture-upload">选择待交文件<input id="inputFileDrop" type="file" multiple accept=".java,.pdf,.png,.jpg" /></label>
+        <p>或将文件拖放到这里 · 文件只保留在当前页面</p>
+        <table data-testid="uploaded_files_table"><tbody id="fixture-files"></tbody></table>
+      </section>
+      <div id="assignments-student-footer" data-testid="student-footer"><button id="submit-button" type="button">Submit</button></div>
+      <p id="fixture-status" role="status"></p>
+    </main>
+    <script type="module" src="/src/fixture/main.ts"></script>
+  </body>
+</html>

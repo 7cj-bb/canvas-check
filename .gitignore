@@ -1,0 +1,16 @@
+node_modules/
+dist*/
+.local-private/
+work/
+.wrangler/
+.env
+.env.*
+!.env.example
+.dev.vars*
+*.log
+*.pem
+*.key
+cloud/deployment.json
+store/publication-status.json
+.DS_Store
+Thumbs.db

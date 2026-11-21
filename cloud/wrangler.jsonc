@@ -1,0 +1,38 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "canvas-check-ai",
+  "main": "worker.ts",
+  "compatibility_date": "2026-11-18",
+  "vars": {
+    "AI_DAILY_UNITS": "200",
+    "OPENAI_MODEL": "gpt-4.1-mini",
+    "OPENAI_PREGRADE_MODEL": "gpt-5-mini",
+    "ALLOWED_EXTENSION_ID": "lobnkmcgghocdbclpmlgojclggemokad"
+  },
+  "ratelimits": [
+    {
+      "name": "AI_RATE_LIMITER",
+      "namespace_id": "1001",
+      "simple": {
+        "limit": 6,
+        "period": 60
+      }
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "AI_USAGE_BUDGET",
+        "class_name": "AIUsageBudget"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1-ai-usage",
+      "new_sqlite_classes": [
+        "AIUsageBudget"
+      ]
+    }
+  ]
+}
